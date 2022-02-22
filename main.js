@@ -13,3 +13,5 @@ for (let i = 0; i < 10; i++) {
     else
         hotel.rooms.push(new Queen());
 }
+
+
