@@ -70,12 +70,12 @@ export class Double extends Room{
 
     allocateRoom(national_id){
         this.national_id_of_customer = national_id;
-        Single.#number_of_free_rooms--;
+        Double.#number_of_free_rooms--;
     }
 
     releaseRoom(){
         this.national_id_of_customer = 0;
-        Single.#number_of_free_rooms++;
+        Double.#number_of_free_rooms++;
     }
 }
 
@@ -99,12 +99,12 @@ export class Queen extends Room{
 
     allocateRoom(national_id){
         this.national_id_of_customer = national_id;
-        Single.#number_of_free_rooms--;
+        Queen.#number_of_free_rooms--;
     }
 
     releaseRoom(){
         this.national_id_of_customer = 0;
-        Single.#number_of_free_rooms++;
+        Queen.#number_of_free_rooms++;
     }
 }
 
@@ -128,12 +128,12 @@ export class King extends Room{
 
     allocateRoom(national_id){
         this.national_id_of_customer = national_id;
-        Single.#number_of_free_rooms--;
+        King.#number_of_free_rooms--;
     }
 
     releaseRoom(){
         this.national_id_of_customer = 0;
-        Single.#number_of_free_rooms++;
+        King.#number_of_free_rooms++;
     }
 }
 
