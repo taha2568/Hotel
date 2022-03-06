@@ -16,7 +16,7 @@ loop:while (true) {
             booking();
             break;
         case 2:
-            // leaving the hotel
+            leaving();
             break;
         case 3:
             break loop;
@@ -71,12 +71,34 @@ function submitRequest(national_id_of_customer, type_of_room, number_of_rooms) {
     }
 }
 
+function leaving(){
+    let national_id_of_customer = getNationalID();
+    let rooms_of_customer = hotel.getRoomsOfCustomer(national_id_of_customer);
+    showRoomsOfCustomer(rooms_of_customer);
+    totalCostOfCustomer(rooms_of_customer);
+    releaseRooms(rooms_of_customer);
+}
 
+function showRoomsOfCustomer(rooms_of_customer){
+    for(let i = 0; i < rooms_of_customer.length; i++){
+        console.log(rooms_of_customer[i].getRoomInformation());
+        console.log('-------------------------------------');
+    }
+}
 
+function totalCostOfCustomer(rooms_of_customer){
+    let total = 0;
+    for(let i = 0; i < rooms_of_customer.length; i++){
+        total += rooms_of_customer[i].price;
+    }
+    console.log(`The total cost for you is ${total}`);
+}
 
-
-
-
+function releaseRooms(rooms_of_customer){
+    for(let i = 0; i < rooms_of_customer.length; i++){
+        rooms_of_customer[i].releaseRoom();
+    }
+}
 
 
 

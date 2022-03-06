@@ -43,6 +43,16 @@ export class Hotel {
         }
         return number_of_available_rooms;
     }
+
+    getRoomsOfCustomer(national_id_of_customer){
+        let rooms_of_customer = [];
+        for(let i = 0; i < this.rooms.length; i++){
+            if(this.rooms[i].national_id_of_customer === national_id_of_customer){
+                rooms_of_customer.push(this.rooms[i])
+            }
+        }
+        return rooms_of_customer;
+    }
 }
 
 
@@ -92,6 +102,10 @@ export class Single extends Room {
     static get availableRooms() {
         return Single.#number_of_available_rooms;
     }
+
+    getRoomInformation(){
+        return `ID = ${this.number} | Type = ${this.type} | Cost = ${this.price}`;
+    }
 }
 
 export class Double extends Room {
@@ -125,6 +139,10 @@ export class Double extends Room {
 
     static get availableRooms() {
         return Double.#number_of_available_rooms;
+    }
+
+    getRoomInformation(){
+        return `ID = ${this.number} | Type = ${this.type} | Cost = ${this.price}`;
     }
 }
 
@@ -161,6 +179,10 @@ export class Queen extends Room {
     static get availableRooms() {
         return Queen.#number_of_available_rooms;
     }
+
+    getRoomInformation(){
+        return `ID = ${this.number} | Type = ${this.type} | Cost = ${this.price}`;
+    }
 }
 
 export class King extends Room {
@@ -195,6 +217,10 @@ export class King extends Room {
 
     static get availableRooms() {
         return King.#number_of_available_rooms;
+    }
+
+    getRoomInformation(){
+        return `ID = ${this.number} | Type = ${this.type} | Cost = ${this.price}`;
     }
 }
 
